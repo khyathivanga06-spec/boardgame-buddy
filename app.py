@@ -1,4 +1,5 @@
 import streamlit as st
+from games_data import games
 
 st.set_page_config(
     page_title="BoardGame Buddy",
@@ -6,25 +7,59 @@ st.set_page_config(
     layout="wide"
 )
 
+# Header
 st.title("🎲 BoardGame Buddy")
 st.subheader("Learn Board Games in Minutes")
 
-search = st.text_input("Search a board game")
+st.markdown("---")
 
-if search:
-    st.write(f"You searched for: {search}")
+# Select Game
+selected_game = st.selectbox(
+    "Choose a Board Game",
+    list(games.keys())
+)
+
+game = games[selected_game]
 
 st.markdown("---")
 
-st.header("Popular Games")
+# Game Information
+st.header(selected_game)
 
-col1, col2, col3 = st.columns(3)
+col1, col2 = st.columns(2)
 
 with col1:
-    st.button("Chess")
+    st.write(f"👥 Players: {game['players']}")
+    st.write(f"🎂 Recommended Age: {game['age']}")
+    st.write(f"⏱️ Play Time: {game['time']}")
 
 with col2:
-    st.button("Uno")
+    st.write("Difficulty")
+    st.write("⭐" * game["difficulty"])
+
+st.markdown("---")
+
+# Video Tutorial
+st.subheader("🎥 Watch and Learn")
+st.video(game["video"])
+
+st.markdown("---")
+
+# Rules
+st.subheader("📚 Simplified Rules")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.info(f"### Setup\n\n{game['setup']}")
+
+with col2:
+    st.info(f"### How To Play\n\n{game['play']}")
+
+col3, col4 = st.columns(2)
 
 with col3:
-    st.button("Monopoly")
+    st.warning(f"### Special Rules\n\n{game['special']}")
+
+with col4:
+    st.success(f"### How To Win\n\n{game['win']}")
