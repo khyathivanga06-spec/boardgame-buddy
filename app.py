@@ -1,53 +1,41 @@
 import streamlit as st
 from games_data import games
 
-st.set_page_config(
-    page_title="BoardGame Buddy",
-    page_icon="🎲",
-    layout="wide"
-)
 st.markdown("""
 <style>
 
 .stApp {
-    background-color: #FFF8E7;
+    background: linear-gradient(
+        -45deg,
+        #d4fc79,
+        #96e6a1,
+        #84fab0,
+        #8fd3f4
+    );
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
 }
 
-/* Main text */
-html, body, [class*="css"] {
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Text Colors */
+
+h1, h2, h3 {
+    color: #0F172A !important;
+}
+
+p, label, div {
     color: #1E293B;
-}
-
-/* Headers */
-h1, h2, h3 {
-    color: #1E3A5F !important;
-}
-
-/* Paragraphs */
-p {
-    color: #334155 !important;
-}
-
-/* Labels */
-label {
-    color: #1E293B !important;
-}
-
-</style>
-""", unsafe_allow_html=True)
-st.markdown("""
-<style>
-
-.stApp {
-    background-color: #FFF8E7;
-}
-
-h1, h2, h3 {
-    color: #1E3A5F;
-}
-
-p {
-    color: #333333;
 }
 
 </style>
