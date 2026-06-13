@@ -7,13 +7,44 @@ st.set_page_config(
     layout="wide"
 )
 
-# Header
+# Sidebar
+
+with st.sidebar:
+
+    st.title("🎲 BoardGame Buddy")
+
+    st.markdown("---")
+
+    st.subheader("Categories")
+
+    st.radio(
+        "Choose Category",
+        [
+            "All Games",
+            "Family Games",
+            "Strategy Games",
+            "Party Games",
+            "Kids Games",
+            "Card Games"
+        ]
+    )
+
+    st.markdown("---")
+
+    st.subheader("🏆 Progress")
+
+    st.progress(0)
+
+    st.write("0 / 3 Games Completed")
+
+# Main Page
+
 st.title("🎲 BoardGame Buddy")
+
 st.subheader("Learn Board Games in Minutes")
 
 st.markdown("---")
 
-# Select Game
 selected_game = st.selectbox(
     "Choose a Board Game",
     list(games.keys())
@@ -23,8 +54,12 @@ game = games[selected_game]
 
 st.markdown("---")
 
-# Game Information
 st.header(selected_game)
+
+st.image(
+    game["image"],
+    width=500
+)
 
 col1, col2 = st.columns(2)
 
@@ -39,13 +74,12 @@ with col2:
 
 st.markdown("---")
 
-# Video Tutorial
 st.subheader("🎥 Watch and Learn")
+
 st.video(game["video"])
 
 st.markdown("---")
 
-# Rules
 st.subheader("📚 Simplified Rules")
 
 col1, col2 = st.columns(2)
