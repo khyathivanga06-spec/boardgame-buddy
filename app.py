@@ -23,12 +23,7 @@ st.markdown("""
     background-color: #0E1117;
 }
 
-/* Headers */
-h1, h2, h3 {
-    color: #FFF8DC !important;
-}
-
-/* Text */
+/* Normal Text */
 p, label, div {
     color: #FFF8DC;
 }
@@ -91,7 +86,7 @@ Watch Tutorials • Learn Rules • Take Quizzes • Earn Badges
 """, unsafe_allow_html=True)
 
 # -----------------------------
-# SEARCH
+# SEARCH BAR
 # -----------------------------
 
 search = st.text_input(
@@ -127,7 +122,10 @@ for i in range(0, len(filtered_games), 4):
 
             st.image(game["image"])
 
-            st.markdown(f"### {game_name}")
+            st.markdown(
+                f"<h3 style='color:#FFF8DC'>{game_name}</h3>",
+                unsafe_allow_html=True
+            )
 
             st.write(f"👥 {game['players']} Players")
 
@@ -135,15 +133,7 @@ for i in range(0, len(filtered_games), 4):
 
             st.write("⭐" * game["difficulty"])
 
-            if st.button(
+            st.button(
                 f"🎮 Learn {game_name}",
                 key=f"btn_{game_name}"
-            ):
-                st.session_state["selected_game"] = game_name
-
-                try:
-                    st.switch_page("pages/Learn_Games.py")
-                except:
-                    st.success(
-                        f"{game_name} selected! Open Learn Games from the sidebar."
-                    )
+            )
