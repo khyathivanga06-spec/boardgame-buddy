@@ -1,11 +1,69 @@
 import streamlit as st
 from games_data import games
 
-st.title("🎲 Learn Games")
+st.set_page_config(
+    page_title="Learn Games",
+    page_icon="🎲",
+    layout="wide"
+)
+
+# Styling
+
+st.markdown("""
+<style>
+
+.stApp {
+    background-color: #0E1117;
+}
+
+h1,h2,h3 {
+    color: #FFF8DC !important;
+}
+
+label {
+    color: #FFF8DC !important;
+}
+
+.stSelectbox div[data-baseweb="select"] {
+    color: white !important;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
+# Hero
+
+st.markdown("""
+<div style="
+background: linear-gradient(135deg,#8B5CF6,#06B6D4);
+padding:25px;
+border-radius:20px;
+text-align:center;
+margin-bottom:20px;
+">
+
+<h1 style="color:white;">
+🎲 Learn Board Games
+</h1>
+
+<p style="color:white;">
+Choose a game and become a Board Game Master!
+</p>
+
+</div>
+""", unsafe_allow_html=True)
+
+# Auto-open selected game
+
+default_game = st.session_state.get(
+    "selected_game",
+    list(games.keys())[0]
+)
 
 selected_game = st.selectbox(
     "Choose a Board Game",
-    list(games.keys())
+    list(games.keys()),
+    index=list(games.keys()).index(default_game)
 )
 
 game = games[selected_game]
@@ -22,34 +80,34 @@ col1, col2 = st.columns(2)
 with col1:
     st.write(f"👥 Players: {game['players']}")
     st.write(f"🎂 Age: {game['age']}")
-    st.write(f"⏱️ Time: {game['time']}")
+    st.write(f"⏱️ Play Time: {game['time']}")
 
 with col2:
     st.write("Difficulty")
     st.write("⭐" * game["difficulty"])
 
-st.markdown("---")
+st.divider()
 
 st.subheader("🎥 Watch and Learn")
 
 st.video(game["video"])
 
-st.markdown("---")
+st.divider()
 
 st.subheader("📚 Simplified Rules")
 
-col1, col2 = st.columns(2)
+c1, c2 = st.columns(2)
 
-with col1:
+with c1:
     st.info(f"### Setup\n\n{game['setup']}")
 
-with col2:
+with c2:
     st.info(f"### How To Play\n\n{game['play']}")
 
-col3, col4 = st.columns(2)
+c3, c4 = st.columns(2)
 
-with col3:
+with c3:
     st.warning(f"### Special Rules\n\n{game['special']}")
 
-with col4:
+with c4:
     st.success(f"### How To Win\n\n{game['win']}")
