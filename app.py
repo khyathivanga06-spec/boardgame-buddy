@@ -1,8 +1,9 @@
 import streamlit as st
 from games_data import games
 
-import streamlit as st
-from games_data import games
+# -----------------------------
+# PAGE CONFIG
+# -----------------------------
 
 st.set_page_config(
     page_title="BoardGame Buddy",
@@ -10,37 +11,49 @@ st.set_page_config(
     layout="wide"
 )
 
-st.markdown("""
-<style>
-...
-</style>
-""", unsafe_allow_html=True)
+# -----------------------------
+# CUSTOM CSS
+# -----------------------------
 
 st.markdown("""
 <style>
 
-background: linear-gradient(
-    180deg,
-    #1f7a1f,
-    #2e8b57,
-    #3cb371
-);
+/* Background */
+.stApp {
+    background-color: #EAF7E8;
+}
 
 /* Headers */
 h1, h2, h3 {
-    color: white !important;
+    color: #1E3A5F !important;
 }
 
-/* Text */
+/* General text */
 p, label {
-    color: white !important;
+    color: #334155 !important;
+}
+
+/* Buttons */
+.stButton > button {
+    background-color: #111827;
+    color: white;
+    border-radius: 12px;
+    border: none;
+    padding: 10px;
+}
+
+/* Search box */
+.stTextInput input {
+    border-radius: 12px;
 }
 
 </style>
 """, unsafe_allow_html=True)
+
 # -----------------------------
-# SEARCH BAR
+# HERO BANNER
 # -----------------------------
+
 st.markdown("""
 <div style="
 background: linear-gradient(135deg,#FFF8DC,#B2F7EF);
@@ -48,23 +61,27 @@ padding:35px;
 border-radius:25px;
 text-align:center;
 margin-bottom:20px;
-box-shadow:0px 4px 12px rgba(0,0,0,0.25);
+box-shadow:0px 4px 12px rgba(0,0,0,0.2);
 ">
 
 <h1 style="color:#1E3A5F;">
 🎲 BoardGame Buddy
 </h1>
 
-<h3 style="color:#2E4057;">
+<h2 style="color:#1E3A5F;">
 Learn Board Games in Minutes
-</h3>
+</h2>
 
-<p style="color:#334155;">
+<p style="color:#334155; font-size:18px;">
 Watch Tutorials • Learn Rules • Take Quizzes • Earn Badges
 </p>
 
 </div>
 """, unsafe_allow_html=True)
+
+# -----------------------------
+# SEARCH BAR
+# -----------------------------
 
 search = st.text_input(
     "🔍 Search Games",
