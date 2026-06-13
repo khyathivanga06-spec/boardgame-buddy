@@ -6,6 +6,15 @@ st.set_page_config(
     page_icon="🎲",
     layout="wide"
 )
+st.markdown("""
+<style>
+
+.stApp {
+    background-color: #FFF8E7;
+}
+
+</style>
+""", unsafe_allow_html=True)
 
 # -----------------------------
 # HERO SECTION
