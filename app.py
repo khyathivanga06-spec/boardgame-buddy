@@ -1,4 +1,5 @@
 import streamlit as st
+from games_data import games
 
 st.set_page_config(
     page_title="BoardGame Buddy",
@@ -6,37 +7,47 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("🎲 BoardGame Buddy")
-st.subheader("Learn Board Games in Minutes")
-
+# Hero Section
 st.markdown("""
-Welcome to BoardGame Buddy!
+<div style="
+background: linear-gradient(135deg,#d4fc79,#96e6a1);
+padding:30px;
+border-radius:20px;
+text-align:center;
+margin-bottom:20px;
+">
+<h1>🎲 BoardGame Buddy</h1>
+<h3>Learn Board Games in Minutes!</h3>
+<p>Watch tutorials • Learn rules • Take quizzes • Become a Board Game Master</p>
+</div>
+""", unsafe_allow_html=True)
 
-📚 Learn board games quickly
-
-🎥 Watch tutorials
-
-🧠 Test yourself with quizzes
-
-🏆 Earn badges and track progress
-
-Use the sidebar to explore the app.
-""")
+# Search
+search = st.text_input(
+    "🔍 Search for a Board Game",
+    placeholder="Chess, Tangram, Jodo..."
+)
 
 st.markdown("---")
 
 st.header("🌟 Featured Games")
 
-col1, col2, col3 = st.columns(3)
+# Filter Games
+filtered_games = []
 
-with col1:
-    st.image("assets/Chess.jpg")
-    st.caption("Chess")
+for game_name in games.keys():
+    if search.lower() in game_name.lower():
+        filtered_games.append(game_name)
 
-with col2:
-    st.image("assets/uno.jpg")
-    st.caption("Uno")
+# Display cards
+cols = st.columns(4)
 
-with col3:
-    st.image("assets/monopoly.jpg")
-    st.caption("Monopoly")
+for i, game_name in enumerate(filtered_games):
+    game = games[game_name]
+
+    with cols[i % 4]:
+        st.image(game["image"])
+        st.markdown(f"### {game_name}")
+        st.write(f"👥 {game['players']} Players")
+        st.write(f"🎂 {game['age']}")
+        st.write("⭐" * game["difficulty"])
