@@ -1,0 +1,19 @@
+.hero-box {
+    background: linear-gradient(
+        135deg,
+        #c8f7c5,
+        #b8f2e6
+    );
+
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.game-card {
+    background: white;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
