@@ -8,9 +8,7 @@ st.set_page_config(
 )
 
 # Sidebar
-
 with st.sidebar:
-
     st.title("🎲 BoardGame Buddy")
 
     st.markdown("---")
@@ -40,7 +38,6 @@ with st.sidebar:
 # Main Page
 
 st.title("🎲 BoardGame Buddy")
-
 st.subheader("Learn Board Games in Minutes")
 
 st.markdown("---")
@@ -75,7 +72,6 @@ with col2:
 st.markdown("---")
 
 st.subheader("🎥 Watch and Learn")
-
 st.video(game["video"])
 
 st.markdown("---")
