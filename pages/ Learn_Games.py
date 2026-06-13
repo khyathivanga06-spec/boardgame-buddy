@@ -1,5 +1,6 @@
 import streamlit as st
 from games_data import games
+from quiz import quiz_data
 
 st.set_page_config(
     page_title="Learn Games",
@@ -111,3 +112,49 @@ with c3:
 
 with c4:
     st.success(f"### How To Win\n\n{game['win']}")
+
+    st.divider()
+
+st.subheader("🧠 Quiz Time")
+
+if selected_game in quiz_data:
+
+    score = 0
+
+    answers = []
+
+    for i, q in enumerate(quiz_data[selected_game]):
+
+        answer = st.radio(
+            q["question"],
+            q["options"],
+            key=f"{selected_game}_{i}"
+        )
+
+        answers.append(answer)
+
+    if st.button("Submit Quiz"):
+
+        for answer, q in zip(
+            answers,
+            quiz_data[selected_game]
+        ):
+            if answer == q["answer"]:
+                score += 1
+
+        st.success(
+            f"You scored {score}/{len(quiz_data[selected_game])}"
+        )
+
+        percentage = (
+            score /
+            len(quiz_data[selected_game])
+        ) * 100
+
+        st.progress(int(percentage) / 100)
+
+        if percentage >= 80:
+            st.balloons()
+            st.success(
+                "🏆 Amazing! You earned a badge!"
+            )
