@@ -19,32 +19,44 @@ st.markdown("""
 <style>
 
 /* Background */
-..stApp {
-    background-color: #C8F5C8;
+.stApp {
+    background-color: #0E1117;
 }
 
 /* Headers */
 h1, h2, h3 {
-    color: #1E3A5F !important;
+    color: #FFF8DC !important;
 }
 
-/* General text */
-p, label {
-    color: #334155 !important;
+/* Text */
+p, label, div {
+    color: #FFF8DC;
 }
 
 /* Buttons */
 .stButton > button {
-    background-color: #111827;
-    color: white;
-    border-radius: 12px;
+    background: linear-gradient(
+        135deg,
+        #8B5CF6,
+        #06B6D4
+    );
+    color: white !important;
+    border-radius: 15px;
     border: none;
     padding: 10px;
+    font-weight: bold;
 }
 
-/* Search box */
+/* Search Box */
 .stTextInput input {
+    background-color: #1F2937;
+    color: white !important;
     border-radius: 12px;
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background-color: #111827;
 }
 
 </style>
@@ -61,7 +73,6 @@ padding:35px;
 border-radius:25px;
 text-align:center;
 margin-bottom:20px;
-box-shadow:0px 4px 12px rgba(0,0,0,0.2);
 ">
 
 <h1 style="color:#1E3A5F;">
@@ -80,36 +91,13 @@ Watch Tutorials • Learn Rules • Take Quizzes • Earn Badges
 """, unsafe_allow_html=True)
 
 # -----------------------------
-# SEARCH BAR
+# SEARCH
 # -----------------------------
 
 search = st.text_input(
     "🔍 Search Games",
     placeholder="Chess, Tangram, Jodo..."
 )
-
-# -----------------------------
-# CATEGORIES
-# -----------------------------
-
-st.subheader("🎮 Categories")
-
-c1, c2, c3, c4, c5 = st.columns(5)
-
-with c1:
-    st.button("👨‍👩‍👧 Family")
-
-with c2:
-    st.button("🧠 Strategy")
-
-with c3:
-    st.button("🎉 Party")
-
-with c4:
-    st.button("🧒 Kids")
-
-with c5:
-    st.button("🃏 Card")
 
 st.divider()
 
@@ -147,7 +135,15 @@ for i in range(0, len(filtered_games), 4):
 
             st.write("⭐" * game["difficulty"])
 
-            st.button(
-                f"Learn {game_name}",
+            if st.button(
+                f"🎮 Learn {game_name}",
                 key=f"btn_{game_name}"
-            )
+            ):
+                st.session_state["selected_game"] = game_name
+
+                try:
+                    st.switch_page("pages/Learn_Games.py")
+                except:
+                    st.success(
+                        f"{game_name} selected! Open Learn Games from the sidebar."
+                    )
