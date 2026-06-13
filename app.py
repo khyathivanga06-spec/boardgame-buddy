@@ -10,16 +10,31 @@ st.markdown("""
 <style>
 
 .stApp {
-    background: linear-gradient(
-        180deg,
-        #FFF8E7 0%,
-        #FFFDF5 100%
-    );
+    background-color: #FFF8E7;
+}
+
+/* Main text */
+html, body, [class*="css"] {
+    color: #1E293B;
+}
+
+/* Headers */
+h1, h2, h3 {
+    color: #1E3A5F !important;
+}
+
+/* Paragraphs */
+p {
+    color: #334155 !important;
+}
+
+/* Labels */
+label {
+    color: #1E293B !important;
 }
 
 </style>
 """, unsafe_allow_html=True)
-
 st.markdown("""
 <style>
 
