@@ -16,6 +16,24 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+st.markdown("""
+<style>
+
+.stApp {
+    background-color: #FFF8E7;
+}
+
+h1, h2, h3 {
+    color: #1E3A5F;
+}
+
+p {
+    color: #333333;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
 # -----------------------------
 # HERO SECTION
 # -----------------------------
