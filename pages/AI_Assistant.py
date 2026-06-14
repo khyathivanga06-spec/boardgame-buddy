@@ -7,7 +7,23 @@ st.set_page_config(
 )
 
 st.title("🤖 BoardGame Buddy AI Coach")
+st.markdown("""
+<div style="
+background:linear-gradient(135deg,#8B5CF6,#06B6D4);
+padding:25px;
+border-radius:20px;
+text-align:center;
+color:white;
+">
 
+<h2>🎮 Your Personal Board Game Coach</h2>
+
+<p>
+Ask questions and learn games like a pro!
+</p>
+
+</div>
+""", unsafe_allow_html=True)
 st.markdown("""
 Ask me anything about board games!
 
