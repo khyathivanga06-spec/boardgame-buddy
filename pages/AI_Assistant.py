@@ -8,7 +8,13 @@ st.set_page_config(
 )
 
 load_css()
+st.sidebar.markdown("---")
 
+st.sidebar.markdown("""
+# 🎲 BoardGame Buddy
+
+Learn • Play • Master
+""")
 
 st.markdown("""
 <div style="
