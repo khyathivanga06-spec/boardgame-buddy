@@ -224,7 +224,7 @@ search = st.text_input(
     "🔍 Search Games",
     placeholder="Chess, Tangram, Jodo..."
 )
-
+st.write(list(games.keys()))
 st.divider()
 
 # -----------------------------
