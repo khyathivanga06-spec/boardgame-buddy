@@ -1,33 +1,18 @@
 import streamlit as st
+from utils import load_css, sidebar_brand, hero_banner
 
 st.set_page_config(
     page_title="Badge Vault",
     page_icon="🏆",
     layout="wide"
 )
+load_css()
+sidebar_brand()
+hero_banner(
+    "🏆 Badge Vault",
+    "Collect badges and become the ultimate Board Game Master!"
+)
 
-st.title("🏆 Badge Vault")
-st.markdown("""
-<div style="
-background:linear-gradient(
-135deg,
-#FACC15,
-#FB7185
-);
-padding:25px;
-border-radius:20px;
-text-align:center;
-color:black;
-">
-
-<h2>🏆 Hall of Fame</h2>
-
-<p>
-Collect badges and become the ultimate Board Game Master!
-</p>
-
-</div>
-""", unsafe_allow_html=True)
 st.markdown("""
 Collect badges by:
 
