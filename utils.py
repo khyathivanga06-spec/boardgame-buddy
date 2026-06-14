@@ -43,13 +43,16 @@ def hero_banner(title, subtitle):
         background: #0B1020;
     }
 
-    section[data-testid="stSidebar"] {
+    section[data-testid="stSidebar"] [aria-current="page"] {
 
-        background: linear-gradient(
-            180deg,
-            #111827,
-            #1E293B,
-            #0F172A
+    background: linear-gradient(
+        135deg,
+        #8B5CF6,
+        #06B6D4
+    ) !important;
+
+    border-radius: 18px;
+}
         );
     }
 
