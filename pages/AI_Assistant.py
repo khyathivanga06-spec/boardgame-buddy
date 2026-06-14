@@ -1,13 +1,14 @@
 import streamlit as st
 from utils import load_css
 
+load_css()
 
 st.set_page_config(
     page_title="AI Coach",
     page_icon="🤖",
     layout="wide"
 )
-load_css()
+
 
 st.title("🤖 BoardGame Buddy AI Coach")
 
