@@ -183,7 +183,8 @@ if selected_game == "Tangram":
         "Challenge Progress",
         1,
         4,
-        1
+        1,
+        key="tangram_slider"
     )
 
     st.image(
@@ -192,28 +193,30 @@ if selected_game == "Tangram":
     )
 
     if step == 4:
+
         st.balloons()
 
         st.success(
             "🎉 Challenge Complete! You built the Tangram Cat!"
         )
-uploaded_file = st.file_uploader(
-    "📸 Upload your Tangram Creation",
-    type=["jpg", "jpeg", "png"],
-    key="tangram_upload"
-)
 
-if uploaded_file:
-
-    st.image(
-        uploaded_file,
-        caption="Your Tangram Creation"
+    uploaded_file = st.file_uploader(
+        "📸 Upload your Tangram Creation",
+        type=["jpg", "jpeg", "png"],
+        key="tangram_upload"
     )
 
-    st.success(
-        "🏆 Awesome work! Tangram Challenge Submitted!"
-    )
-        # -----------------------------
+    if uploaded_file:
+
+        st.image(
+            uploaded_file,
+            caption="Your Tangram Creation"
+        )
+
+        st.success(
+            "🏆 Awesome work! Tangram Challenge Submitted!"
+        )
+       # -----------------------------
 # JODO CHALLENGE
 # -----------------------------
 
@@ -247,19 +250,20 @@ if selected_game == "Jodo":
         st.success(
             "🎉 Awesome! You built a Jodo House!"
         )
-        uploaded_file = st.file_uploader(
-    "📸 Upload your Jodo Creation",
-    type=["jpg", "jpeg", "png"],
-    key="jodo_upload"
-)
 
-if uploaded_file:
-
-    st.image(
-        uploaded_file,
-        caption="Your Jodo Creation"
+    uploaded_file = st.file_uploader(
+        "📸 Upload your Jodo Creation",
+        type=["jpg", "jpeg", "png"],
+        key="jodo_upload"
     )
 
-    st.success(
-        "🏆 Amazing build! Challenge Submitted!"
-    )
+    if uploaded_file:
+
+        st.image(
+            uploaded_file,
+            caption="Your Jodo Creation"
+        )
+
+        st.success(
+            "🏆 Amazing build! Challenge Submitted!"
+        )
