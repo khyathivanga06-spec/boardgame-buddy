@@ -262,11 +262,17 @@ st.markdown("""
 Explore • Learn • Master
 """)
 
-filtered_games = [
-    game for game in games.keys()
-    if search.lower() in game.lower()
-]
+if search.strip() == "":
+    filtered_games = list(games.keys())
+else:
+    filtered_games = []
 
+    for game in games.keys():
+
+        if search.lower().strip() in game.lower():
+
+            filtered_games.append(game)
+st.write("DEBUG:", filtered_games)
 for i in range(0, len(filtered_games), 4):
 
     row_games = filtered_games[i:i+4]
