@@ -154,12 +154,18 @@ if selected_game in quiz_data:
         st.progress(int(percentage) / 100)
 
         if percentage >= 80:
+            if "xp" not in st.session_state:
+                st.session_state["xp"] = 0
+
+            st.session_state["xp"] += 100
+
             st.balloons()
+
             st.success(
-                "🏆 Amazing! You earned a badge!"
+                "🏆 Badge Unlocked! +100 XP"
             )
 
-       # -----------------------------
+# -----------------------------
 # TANGRAM CHALLENGE
 # -----------------------------
 

@@ -111,13 +111,24 @@ Become a Board Game Master
 # XP BAR
 # -----------------------------
 
-st.subheader("⭐ Level 2 Board Gamer")
+if "xp" not in st.session_state:
+    st.session_state["xp"] = 250
 
-st.progress(0.65)
+xp = st.session_state["xp"]
 
-st.write("XP Progress: 650 / 1000")
+level = xp // 100 + 1
 
-st.write("")
+st.subheader(
+    f"⭐ Level {level} Board Gamer"
+)
+
+st.progress(
+    min(xp / 1000, 1.0)
+)
+
+st.write(
+    f"XP: {xp} / 1000"
+)
 
 # -----------------------------
 # DAILY CHALLENGE
