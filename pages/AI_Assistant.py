@@ -8,18 +8,34 @@ st.set_page_config(
 )
 
 load_css()
-st.title("🤖 BoardGame Buddy AI Coach")
+
 
 st.markdown("""
 <div style="
 background:linear-gradient(135deg,#8B5CF6,#06B6D4);
-padding:25px;
-border-radius:20px;
+padding:40px;
+border-radius:25px;
+            margin-bottom:25px;
+            box-shadow:0px 0px 40px rgba(6,182,212,0.4);
 text-align:center;
 color:white;
 ">
 
-<h2>🎮 Your Personal Board Game Coach</h2>
+<h1 style="
+color:white;
+font-size:56px;
+font-weight:800;
+margin-bottom:10px;
+">
+🤖 AI Coach
+</h1>
+
+<h2 style="
+color:white;
+font-size:28px;
+">
+Your Personal Board Game Coach
+</h2>
 
 <p>
 Ask questions and learn games like a pro!
@@ -28,27 +44,34 @@ Ask questions and learn games like a pro!
 </div>
 """, unsafe_allow_html=True)
 
-st.markdown("""
-### Ask me anything about board games!
+st.info("""
+💡 Ask about:
 
-**Examples:**
+♟️ Chess
 
-• How do I play Chess?
+🃏 Uno
 
-• Explain Uno
+🏠 Monopoly
 
-• Give me Monopoly tips
+🧩 Tangram
 
-• What is Tangram?
+🏗️ Jodo
 
-• How do I build Jodo?
+🔤 Scrabble
+
+🏝️ Catan
+
+🚂 Ticket to Ride
 """)
 
 question = st.text_input(
-    "Ask your question"
+    "🎯 Ask your board game question",
+    placeholder="How do I play Chess?"
 )
-
-if st.button("🚀 Ask Coach"):
+if st.button(
+    "🚀 Ask Coach",
+    use_container_width=True
+):
 
     q = question.lower()
 
