@@ -89,3 +89,14 @@ def hero_banner(title, subtitle):
 
     </div>
     """, unsafe_allow_html=True)
+
+
+def sidebar_brand():
+
+    st.sidebar.markdown("---")
+
+    st.sidebar.markdown("""
+    # 🎲 BoardGame Buddy
+
+    Learn • Play • Master
+    """)
