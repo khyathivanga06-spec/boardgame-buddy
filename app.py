@@ -29,7 +29,16 @@ h1, h2, h3, p, div, label {
 
 /* Sidebar */
 section[data-testid="stSidebar"] {
-    background-color: #111827;
+
+    background: linear-gradient(
+        180deg,
+        #111827,
+        #1F2937
+    );
+
+    border-right: 1px solid rgba(
+        255,255,255,0.1
+    );
 }
 
 /* Buttons */
@@ -39,12 +48,36 @@ section[data-testid="stSidebar"] {
         #8B5CF6,
         #06B6D4
     );
+
     color: white !important;
+
     border: none;
-    border-radius: 15px;
+
+    border-radius: 18px;
+
     padding: 12px;
+
     font-weight: bold;
+
     width: 100%;
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0px 5px 15px rgba(
+        0,0,0,0.3
+    );
+}
+
+.stButton > button:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+    0px 10px 25px rgba(
+        6,182,212,0.5
+    );
+
+    cursor: pointer;
 }
 
 /* Search box */
@@ -75,75 +108,67 @@ section[data-testid="stSidebar"] {
     color: black !important;
     margin-bottom: 25px;
 }
+img {
 
+    transition: all 0.3s ease;
+
+    border-radius: 20px;
+}
+
+img:hover {
+
+    transform: scale(1.04);
+
+    box-shadow:
+    0px 10px 30px rgba(
+        139,92,246,0.5
+    );
+}
 </style>
 """, unsafe_allow_html=True)
 
 # -----------------------------
-# HERO
+# HERO BANNER
 # -----------------------------
 
 st.markdown("""
 <div style="
-background:linear-gradient(135deg,#8B5CF6,#06B6D4);
+background:linear-gradient(
+135deg,
+#7C3AED,
+#06B6D4,
+#14B8A6
+);
 padding:40px;
 border-radius:25px;
 text-align:center;
 margin-bottom:25px;
+box-shadow:0px 0px 40px rgba(6,182,212,0.4);
 ">
 
-<h1 style="color:white;">
+<h1 style="
+color:white;
+font-size:60px;
+font-weight:800;
+margin-bottom:10px;
+">
 🎲 BoardGame Buddy
 </h1>
 
-<h2 style="color:white;">
+<h2 style="
+color:white;
+font-size:34px;
+margin-bottom:15px;
+">
 Become a Board Game Master
 </h2>
 
-<p style="color:white;font-size:18px;">
+<p style="
+color:white;
+font-size:18px;
+">
 🎯 Complete Challenges • 🧠 Take Quizzes • 🏆 Earn XP • 🎮 Learn Games
 </p>
-
-</div>
-""", unsafe_allow_html=True)
-
-# -----------------------------
-# XP BAR
-# -----------------------------
-
-if "xp" not in st.session_state:
-    st.session_state["xp"] = 250
-
-xp = st.session_state["xp"]
-
-level = xp // 100 + 1
-
-st.subheader(
-    f"⭐ Level {level} Board Gamer"
-)
-
-st.progress(
-    min(xp / 1000, 1.0)
-)
-
-st.write(
-    f"XP: {xp} / 1000"
-)
-
-# -----------------------------
-# DAILY CHALLENGE
-# -----------------------------
-
-st.markdown("""
-<div class="challenge-card">
-
-<h3>🎯 DAILY CHALLENGE</h3>
-
-<b>Learn Tangram</b><br>
-
-Score 80% or higher in the quiz.<br><br>
-
-🏆 Reward: +100 XP
 
 </div>
 """, unsafe_allow_html=True)
