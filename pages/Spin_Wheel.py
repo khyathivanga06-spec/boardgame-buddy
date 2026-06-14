@@ -9,7 +9,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("🎡 BoardGame Buddy Spin Wheel")
+st.title("🎡 Random Game Selector")
 
 st.write(
     "Get a surprise board game challenge and start learning!"
