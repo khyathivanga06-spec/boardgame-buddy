@@ -218,10 +218,8 @@ for i in range(0, len(filtered_games), 4):
                 f"🎮 Learn {game_name}",
                 key=f"btn_{game_name}"
             ):
-
                 st.session_state["selected_game"] = game_name
-
-                st.switch_page("Learn_Games")
+                st.switch_page("pages/1_Learn_Games.py")
 
 # -----------------------------
 # SPIN WHEEL
