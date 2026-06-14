@@ -1,13 +1,15 @@
 import streamlit as st
 from games_data import games
 from quiz import quiz_data
+from utils import load_css, sidebar_brand, hero_banner
 
 st.set_page_config(
     page_title="Learn Games",
     page_icon="🎲",
     layout="wide"
 )
-
+load_css()
+sidebar_brand()
 # Styling
 
 st.markdown("""
@@ -34,25 +36,10 @@ label {
 
 # Hero
 
-st.markdown("""
-<div style="
-background: linear-gradient(135deg,#8B5CF6,#06B6D4);
-padding:25px;
-border-radius:20px;
-text-align:center;
-margin-bottom:20px;
-">
-
-<h1 style="color:white;">
-🎲 Learn Board Games
-</h1>
-
-<p style="color:white;">
-Choose a game and become a Board Game Master!
-</p>
-
-</div>
-""", unsafe_allow_html=True)
+hero_banner(
+    "🎮 Learn Games",
+    "Explore Rules • Learn Strategies • Become a Master"
+)
 
 # Auto-open selected game
 
