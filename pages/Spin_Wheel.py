@@ -19,7 +19,7 @@ games_list = list(games.keys())
 
 wheel_placeholder = st.empty()
 
-if st.button("🎲 SPIN THE WHEEL"):
+if st.button("🎯 PICK MY CHALLENGE"):
 
     # spinning animation
 
