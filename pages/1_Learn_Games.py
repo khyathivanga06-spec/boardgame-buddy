@@ -191,3 +191,38 @@ if selected_game == "Tangram":
         st.success(
             "🎉 Challenge Complete! You built the Tangram Cat!"
         )
+
+        # -----------------------------
+# JODO CHALLENGE
+# -----------------------------
+
+if selected_game == "Jodo":
+
+    st.divider()
+
+    st.header("🏗️ Jodo House Challenge")
+
+    st.write(
+        "Follow the building steps!"
+    )
+
+    step = st.slider(
+        "Building Progress",
+        1,
+        4,
+        1,
+        key="jodo_slider"
+    )
+
+    st.image(
+        f"assets/jodo_steps/step{step}.jpg",
+        caption=f"Step {step}"
+    )
+
+    if step == 4:
+
+        st.balloons()
+
+        st.success(
+            "🎉 Awesome! You built a Jodo House!"
+        )
