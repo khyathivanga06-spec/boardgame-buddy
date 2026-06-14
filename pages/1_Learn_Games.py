@@ -159,53 +159,35 @@ if selected_game in quiz_data:
                 "🏆 Amazing! You earned a badge!"
             )
 
-        if selected_game == "Tangram":
+       # -----------------------------
+# TANGRAM CHALLENGE
+# -----------------------------
 
-            st.divider()
-
-            st.header("🧩 Tangram Challenges")
-
-    st.image(
-        "assets/tangram.jpg",
-        width=500
-    )
-
-    st.info(
-        """
-        Challenge 1:
-        Build a Rabbit
-
-        Challenge 2:
-        Build a House
-
-        Challenge 3:
-        Build a Cat
-        """
-    )
-
-if selected_game == "Jodo":
+if selected_game == "Tangram":
 
     st.divider()
 
-    st.header("🏗️ Jodo Builder")
+    st.header("🧩 Tangram Cat Challenge")
+
+    st.write(
+        "Move the slider to see each building step!"
+    )
+
+    step = st.slider(
+        "Challenge Progress",
+        1,
+        4,
+        1
+    )
 
     st.image(
-        "assets/jodo.jpg",
-        width=500
+        f"assets/tangram_steps/step{step}.jpg",
+        caption=f"Step {step}"
     )
 
-    st.success(
-        """
-        Step 1:
-        Build a square base.
+    if step == 4:
+        st.balloons()
 
-        Step 2:
-        Add vertical sticks.
-
-        Step 3:
-        Connect the roof.
-
-        Step 4:
-        Build your own design!
-        """
-    )
+        st.success(
+            "🎉 Challenge Complete! You built the Tangram Cat!"
+        )
