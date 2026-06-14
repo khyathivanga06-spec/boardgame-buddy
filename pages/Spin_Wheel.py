@@ -1,21 +1,77 @@
 import streamlit as st
 import random
+import time
 from games_data import games
 
-st.title("🎡 Spin The Wheel")
+st.set_page_config(
+    page_title="Spin Wheel",
+    page_icon="🎡",
+    layout="wide"
+)
 
-st.write("Can't decide what to play?")
+st.title("🎡 BoardGame Buddy Spin Wheel")
 
-if st.button("🎲 SPIN!"):
+st.markdown("""
+### Can't decide what to learn today?
 
-    winner = random.choice(
-        list(games.keys())
+Press SPIN and let fate choose your next game!
+""")
+
+games_list = list(games.keys())
+
+wheel_placeholder = st.empty()
+
+if st.button("🎲 SPIN THE WHEEL"):
+
+    # spinning animation
+
+    for i in range(25):
+
+        current = random.choice(games_list)
+
+        wheel_placeholder.markdown(
+            f"""
+            <div style="
+            text-align:center;
+            padding:30px;
+            border-radius:20px;
+            background:linear-gradient(135deg,#8B5CF6,#06B6D4);
+            color:white;
+            font-size:35px;
+            font-weight:bold;
+            ">
+            🎡 {current}
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+        time.sleep(0.1)
+
+    winner = random.choice(games_list)
+
+    wheel_placeholder.markdown(
+        f"""
+        <div style="
+        text-align:center;
+        padding:30px;
+        border-radius:20px;
+        background:linear-gradient(135deg,#FACC15,#FB7185);
+        color:black;
+        font-size:40px;
+        font-weight:bold;
+        ">
+        🏆 WINNER<br><br>
+        {winner}
+        </div>
+        """,
+        unsafe_allow_html=True
     )
 
     st.balloons()
 
-    st.success(
-        f"🎉 Today's Game: {winner}"
-    )
-
     st.session_state["selected_game"] = winner
+
+    st.success(
+        f"🎉 Today's challenge: Learn {winner}!"
+    )
