@@ -10,6 +10,11 @@ st.set_page_config(
     page_icon="🎲",
     layout="wide"
 )
+st.sidebar.markdown("""
+# 🎲 BoardGame Buddy
+
+Learn • Play • Master
+""")
 # -----------------------------
 # CUSTOM CSS
 # -----------------------------
@@ -33,14 +38,44 @@ section[data-testid="stSidebar"] {
     background: linear-gradient(
         180deg,
         #111827,
-        #1F2937
+        #1E293B,
+        #0F172A
     );
 
-    border-right: 1px solid rgba(
-        255,255,255,0.1
+    border-right: 2px solid rgba(
+        139,92,246,0.3
+    );
+
+    box-shadow:
+    5px 0px 20px rgba(
+        0,0,0,0.3
     );
 }
+            section[data-testid="stSidebar"] a {
 
+    border-radius: 12px;
+
+    transition: all 0.3s ease;
+}
+
+section[data-testid="stSidebar"] a:hover {
+
+    background: rgba(
+        139,92,246,0.15
+    );
+
+    transform: translateX(5px);
+}
+            section[data-testid="stSidebar"] [aria-current="page"] {
+
+    background: linear-gradient(
+        135deg,
+        #8B5CF6,
+        #06B6D4
+    );
+
+    border-radius: 12px;
+}
 /* Buttons */
 .stButton > button {
     background: linear-gradient(
