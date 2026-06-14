@@ -276,8 +276,12 @@ for i in range(0, len(filtered_games), 4):
     for col, game_name in zip(cols, row_games):
 
         game = games[game_name]
-
         with col:
+
+            st.markdown(
+                '<div class="card">',
+                unsafe_allow_html=True
+            )
 
             st.image(game["image"])
 
@@ -303,7 +307,10 @@ for i in range(0, len(filtered_games), 4):
             ):
                 st.session_state["selected_game"] = game_name
                 st.switch_page("pages/1_Learn_Games.py")
-
+st.markdown(
+    '</div>',
+    unsafe_allow_html=True
+)
 # -----------------------------
 # SPIN WHEEL
 # -----------------------------
