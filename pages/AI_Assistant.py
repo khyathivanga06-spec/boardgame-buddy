@@ -1,20 +1,13 @@
 import streamlit as st
-import google.generativeai as genai
+
 st.set_page_config(
     page_title="AI Coach",
     page_icon="🤖",
     layout="wide"
 )
-genai.configure(
-    api_key=st.secrets["GEMINI_API_KEY"]
-)
-
-model = genai.GenerativeModel(
-    "gemini-2.0-flash"
-)
-
 
 st.title("🤖 BoardGame Buddy AI Coach")
+
 st.markdown("""
 <div style="
 background:linear-gradient(135deg,#8B5CF6,#06B6D4);
@@ -32,10 +25,11 @@ Ask questions and learn games like a pro!
 
 </div>
 """, unsafe_allow_html=True)
-st.markdown("""
-Ask me anything about board games!
 
-Examples:
+st.markdown("""
+### Ask me anything about board games!
+
+**Examples:**
 
 • How do I play Chess?
 
@@ -54,39 +48,198 @@ question = st.text_input(
 
 if st.button("🚀 Ask Coach"):
 
-    if question:
+    q = question.lower()
 
-        with st.spinner(
-            "🤖 Thinking..."
-        ):
+    # CHESS
 
-            prompt = f"""
-            You are BoardGame Buddy AI.
+    if "chess" in q:
 
-            Help children learn board games.
+        st.success("""
+♟️ Chess Coach
 
-            Explain things simply.
+Goal:
+Checkmate your opponent's king.
 
-            Give clear beginner-friendly answers.
+Beginner Tips:
 
-            Question:
-            {question}
-            """
+• Control the center.
 
-            response = model.generate_content(
-                prompt
-            )
+• Develop knights and bishops early.
 
-            st.markdown(
-                f"""
-                <div style="
-                background:#151C2E;
-                padding:20px;
-                border-radius:20px;
-                margin-top:10px;
-                ">
-                {response.text}
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
+• Castle your king for safety.
+
+• Don't move the same piece too many times.
+
+Think of Chess like planning an adventure before making your move.
+""")
+
+    # UNO
+
+    elif "uno" in q:
+
+        st.success("""
+🃏 Uno Coach
+
+Goal:
+Be the first player to get rid of all cards.
+
+Tips:
+
+• Save your wild cards.
+
+• Watch what colors opponents need.
+
+• Remember to say UNO when one card remains.
+
+Uno is all about timing and surprises!
+""")
+
+    # MONOPOLY
+
+    elif "monopoly" in q:
+
+        st.success("""
+🏠 Monopoly Coach
+
+Goal:
+Become the richest player.
+
+Tips:
+
+• Buy properties early.
+
+• Build houses quickly.
+
+• Don't spend all your money.
+
+• Railroads are valuable.
+
+Think like a property investor!
+""")
+
+    # TANGRAM
+
+    elif "tangram" in q:
+
+        st.success("""
+🧩 Tangram Coach
+
+Goal:
+Create shapes using all seven pieces.
+
+Tips:
+
+• Start with the large triangles.
+
+• Use all seven pieces.
+
+• Pieces may touch.
+
+• Pieces must not overlap.
+
+Practice makes you faster!
+""")
+
+    # JODO
+
+    elif "jodo" in q:
+
+        st.success("""
+🏗️ Jodo Coach
+
+Goal:
+Build structures using sticks and connectors.
+
+Tips:
+
+• Start with simple shapes.
+
+• Build strong foundations.
+
+• Connect pieces carefully.
+
+• Experiment with your own designs.
+
+Think like an engineer!
+""")
+
+    # SCRABBLE
+
+    elif "scrabble" in q:
+
+        st.success("""
+🔤 Scrabble Coach
+
+Goal:
+Create words and score points.
+
+Tips:
+
+• Use bonus squares.
+
+• Save valuable letters.
+
+• Create multiple words at once.
+
+Think strategically before placing tiles.
+""")
+
+    # CATAN
+
+    elif "catan" in q:
+
+        st.success("""
+🏝️ Catan Coach
+
+Goal:
+Reach 10 victory points.
+
+Tips:
+
+• Collect resources early.
+
+• Trade wisely.
+
+• Build roads quickly.
+
+• Watch where opponents expand.
+""")
+
+    # TICKET TO RIDE
+
+    elif "ticket" in q or "ride" in q:
+
+        st.success("""
+🚂 Ticket to Ride Coach
+
+Goal:
+Complete train routes.
+
+Tips:
+
+• Finish destination tickets.
+
+• Claim important routes early.
+
+• Block opponents when possible.
+
+Plan ahead!
+""")
+
+    else:
+
+        st.info("""
+🤖 I'm your BoardGame Buddy Coach!
+
+Try asking:
+
+• How do I play Chess?
+
+• Explain Uno
+
+• Monopoly tips
+
+• What is Tangram?
+
+• How do I build Jodo?
+""")
