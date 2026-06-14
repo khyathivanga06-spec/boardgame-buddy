@@ -4,18 +4,16 @@ import time
 from games_data import games
 
 st.set_page_config(
-    page_title="Spin Wheel",
+    page_title="🎲 Random Game",
     page_icon="🎡",
     layout="wide"
 )
 
 st.title("🎡 BoardGame Buddy Spin Wheel")
 
-st.markdown("""
-### Can't decide what to learn today?
-
-Press SPIN and let fate choose your next game!
-""")
+st.write(
+    "Get a surprise board game challenge and start learning!"
+)
 
 games_list = list(games.keys())
 
