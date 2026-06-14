@@ -89,12 +89,40 @@ section[data-testid="stSidebar"] {
 
 /* Cards */
 .card {
-    background: #151C2E;
-    padding: 15px;
-    border-radius: 20px;
-    box-shadow: 0px 4px 20px rgba(0,0,0,0.3);
+    background: rgba(
+        255,255,255,0.05
+    );
+
+    backdrop-filter: blur(10px);
+
+    padding: 20px;
+
+    border-radius: 25px;
+
+    border: 1px solid rgba(
+        255,255,255,0.1
+    );
+
+    box-shadow:
+    0px 8px 25px rgba(
+        0,0,0,0.3
+    );
+
     margin-bottom: 20px;
+
     text-align: center;
+
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+    0px 15px 35px rgba(
+        139,92,246,0.4
+    );
 }
 
 .challenge-card {
