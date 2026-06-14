@@ -3,14 +3,31 @@ import time
 
 st.title("⏱️ Game Timer")
 
-seconds = st.slider(
-    "Choose Time",
-    10,
-    300,
-    60
+time_option = st.selectbox(
+    "⏱️ Choose Timer",
+    [
+        "30 Seconds",
+        "1 Minute",
+        "2 Minutes",
+        "5 Minutes"
+    ]
 )
 
-if st.button("Start Timer"):
+if time_option == "30 Seconds":
+    seconds = 30
+
+elif time_option == "1 Minute":
+    seconds = 60
+
+elif time_option == "2 Minutes":
+    seconds = 120
+
+else:
+    seconds = 300
+st.info(
+    f"Selected Time: {seconds} seconds"
+)
+if st.button("🚀 Start Timer"):
 
     progress = st.progress(0)
 
@@ -23,7 +40,6 @@ if st.button("Start Timer"):
         time.sleep(1)
 
     st.balloons()
-
     st.success(
-        "⏰ Time's Up!"
+        "🎉 Time's Up! Challenge Complete!"
     )
