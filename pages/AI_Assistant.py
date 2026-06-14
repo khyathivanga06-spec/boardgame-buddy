@@ -7,11 +7,7 @@ st.set_page_config(
     layout="wide"
 )
 
-load_css("""
-h1 {
-    color: red !important;
-}
-""")
+load_css()
 st.title("🤖 BoardGame Buddy AI Coach")
 
 st.markdown("""
