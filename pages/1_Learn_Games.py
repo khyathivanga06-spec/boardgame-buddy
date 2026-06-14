@@ -179,13 +179,34 @@ if selected_game == "Tangram":
         "Move the slider to see each building step!"
     )
 
-    step = st.slider(
-        "Challenge Progress",
-        1,
-        4,
-        1,
-        key="tangram_slider"
-    )
+    if "tangram_step" not in st.session_state:
+        st.session_state["tangram_step"] = 1
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+
+        if st.button(
+            "⬅ Previous",
+            key="tangram_prev"
+        ):
+
+            if st.session_state["tangram_step"] > 1:
+
+                st.session_state["tangram_step"] -= 1
+
+    with col2:
+
+        if st.button(
+            "Next ➡",
+            key="tangram_next"
+        ):
+
+            if st.session_state["tangram_step"] < 4:
+
+                st.session_state["tangram_step"] += 1
+
+    step = st.session_state["tangram_step"]
 
     st.image(
         f"assets/tangram_steps/step{step}.jpg",
@@ -216,7 +237,8 @@ if selected_game == "Tangram":
         st.success(
             "🏆 Awesome work! Tangram Challenge Submitted!"
         )
-       # -----------------------------
+
+# -----------------------------
 # JODO CHALLENGE
 # -----------------------------
 
@@ -230,14 +252,39 @@ if selected_game == "Jodo":
         "Follow the building steps!"
     )
 
-    step = st.slider(
-        "Building Progress",
-        1,
-        4,
-        1,
-        key="jodo_slider"
-    )
+    if "jodo_step" not in st.session_state:
+        st.session_state["jodo_step"] = 1
 
+    col1, col2 = st.columns(2)
+
+    with col1:
+
+        if st.button(
+            "⬅ Previous",
+            key="jodo_prev"
+        ):
+
+            if st.session_state["jodo_step"] > 1:
+
+                st.session_state["jodo_step"] -= 1
+
+    with col2:
+
+        if st.button(
+            "Next ➡",
+            key="jodo_next"
+        ):
+
+            if st.session_state["jodo_step"] < 4:
+
+                st.session_state["jodo_step"] += 1
+
+    step = st.session_state["jodo_step"]
+    st.progress(step / 4)
+
+    st.write(
+        f"🏗️ Step {step} of 4"
+    )
     st.image(
         f"assets/jodo_steps/step{step}.jpg",
         caption=f"Step {step}"
