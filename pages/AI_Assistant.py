@@ -1,82 +1,77 @@
 import streamlit as st
 
-st.set_page_config(
-    page_title="BoardGame Buddy AI",
-    page_icon="🤖",
-    layout="wide"
+st.title("🤖 BoardGame Buddy AI Coach")
+
+question = st.text_input(
+    "Ask me about any game"
 )
 
-st.title("🤖 BoardGame Buddy AI Assistant")
+if st.button("Ask Coach"):
 
-st.markdown("""
-Ask me anything about board games!
+    q = question.lower()
 
-Examples:
-- How do I win in Chess?
-- What is the goal of Tangram?
-- Is Uno easy for beginners?
-- How many players can play Monopoly?
+    if "chess" in q:
+
+        st.success("""
+♟️ Chess Tip
+
+Control the center of the board.
+
+Protect your king.
+
+Develop your pieces early.
 """)
 
-question = st.text_area(
-    "Ask your question"
-)
+    elif "uno" in q:
 
-if st.button("🚀 Ask AI"):
+        st.success("""
+🎨 Uno Tip
 
-    if question:
+Save special cards for later.
 
-        q = question.lower()
+Don't forget to say UNO when one card remains.
+""")
 
-        if "chess" in q:
-            answer = """
-Chess is a strategy game for 2 players.
-The goal is to checkmate your opponent's king.
-Try controlling the center of the board and protecting your king.
-"""
+    elif "monopoly" in q:
 
-        elif "uno" in q:
-            answer = """
-Uno is a fast card game.
-Match cards by color or number.
-Don't forget to say UNO when you have one card left!
-"""
+        st.success("""
+🏠 Monopoly Tip
 
-        elif "monopoly" in q:
-            answer = """
-Monopoly is about buying properties and collecting rent.
-The goal is to become the richest player and bankrupt your opponents.
-"""
+Buy properties early.
 
-        elif "tangram" in q:
-            answer = """
-Tangram is a puzzle game.
-Use all seven pieces to create shapes and figures.
-It helps improve creativity and problem-solving skills.
-"""
+The more properties you own,
+the more rent you collect.
+""")
 
-        elif "jodo" in q:
-            answer = """
-Jodo is a construction and creativity game.
-Players use colorful sticks and connectors to build structures.
-It encourages imagination and teamwork.
-"""
+    elif "tangram" in q:
 
-        else:
-            answer = f"""
-Great question!
+        st.success("""
+🧩 Tangram Tip
 
-{question}
+Use all seven pieces.
 
-A good way to learn any board game is:
+Pieces can touch but never overlap.
+""")
 
-1. Understand the goal.
-2. Learn the setup.
-3. Practice a few turns.
-4. Have fun and learn as you play.
-"""
+    elif "jodo" in q:
 
-        st.success(answer)
+        st.success("""
+🏗️ Jodo Tip
+
+Start with simple shapes.
+
+Then combine them into larger structures.
+""")
 
     else:
-        st.warning("Please enter a question first.")
+
+        st.info("""
+I'm your BoardGame Buddy Coach!
+
+Try asking:
+
+• How do I play Chess?
+• Explain Uno
+• Monopoly tips
+• What is Tangram?
+""")
