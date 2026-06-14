@@ -272,7 +272,7 @@ else:
         if search.lower().strip() in game.lower():
 
             filtered_games.append(game)
-st.write("DEBUG:", filtered_games)
+
 for i in range(0, len(filtered_games), 4):
 
     row_games = filtered_games[i:i+4]
