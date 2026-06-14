@@ -124,6 +124,21 @@ img:hover {
         139,92,246,0.5
     );
 }
+            hr {
+    border: none;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #8B5CF6,
+        #06B6D4,
+        transparent
+    );
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -213,7 +228,11 @@ st.divider()
 # FEATURED GAMES
 # -----------------------------
 
-st.header("⭐ Featured Games")
+st.markdown("""
+# ⭐ Featured Games
+
+Explore • Learn • Master
+""")
 
 filtered_games = [
     game for game in games.keys()
