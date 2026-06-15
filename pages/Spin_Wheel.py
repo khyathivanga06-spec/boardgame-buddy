@@ -2,16 +2,16 @@ import streamlit as st
 import random
 import time
 from games_data import games
-
+from utils import load_css, sidebar_brand, hero_banner
 st.set_page_config(
     page_title="🎲 Random Game",
     page_icon="🎡",
     layout="wide"
 )
-
-st.title("🎡 Random Game Selector")
-
-st.write(
+load_css()
+sidebar_brand()
+hero_banner(
+    "🎡 Random Game Selector",
     "Get a surprise board game challenge and start learning!"
 )
 

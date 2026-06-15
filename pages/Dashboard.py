@@ -1,12 +1,16 @@
 import streamlit as st
-
+from utils import load_css, sidebar_brand, hero_banner
 st.set_page_config(
     page_title="Dashboard",
     page_icon="📊",
     layout="wide"
 )
-
-st.title("📊 Progress Dashboard")
+load_css()
+sidebar_brand()
+hero_banner(
+    "📊 Dashboard",
+    "Track Progress • XP • Achievements"
+)
 
 # Sample progress data
 

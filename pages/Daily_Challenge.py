@@ -1,7 +1,18 @@
 import streamlit as st
 import random
+from utils import load_css, sidebar_brand, hero_banner
+st.set_page_config(
+    page_title="Daily Challenge",
+    page_icon="🎯",
+    layout="wide"
+)
 
-st.title("🎯 Daily Challenge")
+load_css()
+sidebar_brand()
+hero_banner(
+    "🎯 Daily Challenge",
+    "Complete Challenges • Earn XP • Improve Skills"
+)
 
 challenges = [
     "Score 100% in Chess Quiz",

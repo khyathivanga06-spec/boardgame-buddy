@@ -10,7 +10,7 @@ load_css()
 sidebar_brand()
 hero_banner(
     "🏆 Badge Vault",
-    "Collect badges and become the ultimate Board Game Master!"
+    "Collect Badges • Earn Rewards • Show Progress"
 )
 
 st.markdown("""

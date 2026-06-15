@@ -1,7 +1,18 @@
 import streamlit as st
 import time
+from utils import load_css, sidebar_brand, hero_banner
+st.set_page_config(
+    page_title="Game Timer",
+    page_icon="⏱️",
+    layout="wide"
+)
 
-st.title("⏱️ Game Timer")
+load_css()
+sidebar_brand()
+hero_banner(
+    "⏱️ Game Timer",
+    "Track Time • Stay Fair • Play Better"
+)
 
 time_option = st.selectbox(
     "⏱️ Choose Timer",
