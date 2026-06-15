@@ -57,7 +57,13 @@ def load_css():
 
         transform: scale(1.03);
     }
+div[data-testid="stVerticalBlock"] {
+    transition: all 0.3s ease;
+}
 
+div[data-testid="stVerticalBlock"]:hover {
+    transform: translateY(-5px);
+}
     </style>
     """, unsafe_allow_html=True)
 
