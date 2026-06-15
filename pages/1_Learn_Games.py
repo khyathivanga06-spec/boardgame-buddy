@@ -78,7 +78,7 @@ st.divider()
 
 st.subheader("🎥 Watch and Learn")
 
- st.markdown("""
+st.markdown("""
 <div style="
 background:rgba(124,58,237,0.12);
 padding:20px;
