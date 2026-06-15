@@ -106,7 +106,8 @@ def sidebar_brand():
 
     Learn • Play • Master
     """)
-    def xp_bar():
+
+def xp_bar():
 
     if "xp" not in st.session_state:
         st.session_state["xp"] = 650
