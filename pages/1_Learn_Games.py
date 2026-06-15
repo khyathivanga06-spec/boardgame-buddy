@@ -165,29 +165,7 @@ if selected_game == "Tangram":
     st.write(
         "Move the slider to see each building step!"
     )
-from voice_utils import text_to_speech
-tangram_text = """
-Welcome to Tangram.
 
-The goal is to create shapes using all seven pieces.
-
-Use every piece exactly once.
-
-Do not overlap the pieces.
-
-Start with simple animals and objects.
-
-Practice helps you become faster.
-"""
-
-if st.button("🔊 Listen to Tangram Instructions"):
-
-    audio = text_to_speech(tangram_text)
-
-    st.audio(
-        audio,
-        format="audio/mp3"
-    )
     if "tangram_step" not in st.session_state:
         st.session_state["tangram_step"] = 1
 
