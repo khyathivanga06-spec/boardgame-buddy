@@ -106,3 +106,23 @@ def sidebar_brand():
 
     Learn • Play • Master
     """)
+    def xp_bar():
+
+    if "xp" not in st.session_state:
+        st.session_state["xp"] = 650
+
+    xp = st.session_state["xp"]
+
+    level = xp // 250 + 1
+
+    st.markdown(
+        f"### ⭐ Level {level} Gamer"
+    )
+
+    st.progress(
+        min(xp / 1000, 1.0)
+    )
+
+    st.write(
+        f"🏆 XP: {xp} / 1000"
+    )

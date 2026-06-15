@@ -1,5 +1,5 @@
 import streamlit as st
-from utils import load_css, sidebar_brand, hero_banner
+from utils import load_css, sidebar_brand, hero_banner, xp_bar
 
 st.set_page_config(
     page_title="Badge Vault",
@@ -12,7 +12,7 @@ hero_banner(
     "🏆 Badge Vault",
     "Collect Badges • Earn Rewards • Show Progress"
 )
-
+xp_bar()
 st.markdown("""
 Collect badges by:
 
