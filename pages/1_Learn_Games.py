@@ -78,6 +78,30 @@ st.divider()
 
 st.subheader("🎥 Watch and Learn")
 
+ st.markdown("""
+<div style="
+background:rgba(124,58,237,0.12);
+padding:20px;
+border-radius:18px;
+border-left:5px solid #8B5CF6;
+margin-top:20px;
+margin-bottom:20px;
+">
+
+<h3>🧩 What is Tangram?</h3>
+
+Tangram is a puzzle game that uses seven geometric pieces called tans.
+Players arrange all seven pieces to create animals, objects, people, and many other shapes.
+
+<h3>🌟 Benefits</h3>
+
+✅ Improves problem-solving skills<br>
+✅ Develops spatial reasoning<br>
+✅ Encourages creativity<br>
+✅ Builds logical thinking
+
+</div>
+""", unsafe_allow_html=True)
 st.video(game["video"])
 
 st.divider()
@@ -157,30 +181,7 @@ if selected_game in quiz_data:
 # -----------------------------
 
 if selected_game == "Tangram":
-    st.markdown("""
-<div style="
-background:rgba(124,58,237,0.12);
-padding:20px;
-border-radius:18px;
-border-left:5px solid #8B5CF6;
-margin-top:20px;
-margin-bottom:20px;
-">
 
-<h3>🧩 What is Tangram?</h3>
-
-Tangram is a puzzle game that uses seven geometric pieces called tans.
-Players arrange all seven pieces to create animals, objects, people, and many other shapes.
-
-<h3>🌟 Benefits</h3>
-
-✅ Improves problem-solving skills<br>
-✅ Develops spatial reasoning<br>
-✅ Encourages creativity<br>
-✅ Builds logical thinking
-
-</div>
-""", unsafe_allow_html=True)
     st.divider()
 
     st.header("🧩 Tangram Cat Challenge")
