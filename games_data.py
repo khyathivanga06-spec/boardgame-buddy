@@ -6,6 +6,15 @@ games = {
         "age": "6+",
         "time": "30-60 mins",
         "difficulty": 5,
+        "description":
+"Chess is a strategic board game played between two players. The objective is to checkmate your opponent's king while protecting your own pieces.",
+
+"benefits": [
+    "Improves critical thinking",
+    "Develops problem-solving skills",
+    "Strengthens concentration",
+    "Encourages planning and strategy"
+],
         "video": "https://www.youtube.com/watch?v=OCSbzArwB10",
         "setup": "Arrange all pieces in their starting positions.",
         "play": "Players take turns moving pieces. Each piece has its own movement rules.",
@@ -19,6 +28,15 @@ games = {
         "age": "7+",
         "time": "15-30 mins",
         "difficulty": 2,
+        "description":
+"Uno is a fast-paced card game where players match colors and numbers to get rid of all their cards before everyone else.",
+
+"benefits": [
+    "Improves decision-making",
+    "Builds attention skills",
+    "Encourages social interaction",
+    "Develops quick thinking"
+],
         "video": "https://youtu.be/sWoSZmHsCls?si=cJLCA_LChKQpI9ik",
         "setup": "Each player gets 7 cards.",
         "play": "Match cards by color or number.",
@@ -32,6 +50,15 @@ games = {
         "age": "8+",
         "time": "60-180 mins",
         "difficulty": 3,
+        "description":
+"Monopoly is a property trading game where players buy, sell, and develop properties to become the wealthiest player.",
+
+"benefits": [
+    "Teaches money management",
+    "Develops negotiation skills",
+    "Encourages strategic thinking",
+    "Improves decision-making"
+],
         "video": "https://youtu.be/AuWvMgYv03g?si=MrsqNFZWhNhoYGS_",
         "setup": "Place the board and give money to each player.",
         "play": "Roll dice and move around the board buying properties.",
@@ -45,6 +72,15 @@ games = {
         "age": "10+",
         "time": "45-90 mins",
         "difficulty": 3,
+        "description":
+"Scrabble is a word-building board game where players create words using letter tiles to score points.",
+
+"benefits": [
+    "Expands vocabulary",
+    "Improves spelling",
+    "Strengthens language skills",
+    "Enhances critical thinking"
+],
         "video": "https://youtu.be/swlg3vQXboE?si=8jbfMpcF1McV4F1r",
         "setup": "Each player draws 7 letter tiles.",
         "play": "Create words on the board using letter tiles.",
@@ -58,6 +94,15 @@ games = {
         "age": "10+",
         "time": "60-120 mins",
         "difficulty": 4,
+        "description":
+"Catan is a strategy game where players gather resources, build settlements, and trade with others to earn victory points.",
+
+"benefits": [
+    "Develops resource management",
+    "Improves negotiation skills",
+    "Encourages strategic planning",
+    "Strengthens decision-making"
+],
         "video": "https://www.youtube.com/watch?v=oiQ6SgBzfqY",
         "setup": "Build the island using hexagonal resource tiles.",
         "play": "Collect resources, trade, and build roads and settlements.",
@@ -71,6 +116,15 @@ games = {
         "age": "8+",
         "time": "30-60 mins",
         "difficulty": 3,
+        "description":
+"Ticket to Ride is a railway adventure game where players collect train cards and build routes across the map.",
+
+"benefits": [
+    "Improves planning skills",
+    "Encourages strategic thinking",
+    "Develops geography awareness",
+    "Enhances problem-solving"
+],
         "video": "https://www.youtube.com/watch?v=qHmf1bau9xQ",
         "setup": "Deal train cards and destination tickets.",
         "play": "Collect matching train cards to claim railway routes.",
