@@ -84,6 +84,15 @@ games = {
         "age": "6+",
         "time": "15-30 mins",
         "difficulty": 2,
+        "description":
+"Jodo is a hands-on construction activity where players use sticks and connectors to build structures, shapes, and creative designs. It introduces basic engineering concepts through play and experimentation.",
+
+"benefits": [
+    "Encourages creativity and innovation",
+    "Develops engineering thinking",
+    "Improves teamwork and collaboration",
+    "Strengthens problem-solving skills"
+],
         "video": "https://youtu.be/qGIBTXLj0ME?si=9lwfez8nvXofC6he",
         "setup": "Give players colorful sticks and connectors.",
         "play": "Build shapes and structures using sticks and connectors.",
@@ -97,6 +106,15 @@ games = {
         "age": "5+",
         "time": "10-20 mins",
         "difficulty": 3,
+        "description":
+"Tangram is a puzzle game made up of seven geometric pieces called tans. Players arrange all seven pieces to create animals, objects, people, and many other shapes.",
+
+"benefits": [
+    "Improves problem-solving skills",
+    "Develops spatial reasoning",
+    "Encourages creativity",
+    "Strengthens logical thinking"
+],
         "video": "https://youtu.be/4XPCo4hvFKw?si=6XKeK2CBwtH50QYu",
         "setup": "Arrange the seven tangram pieces on a flat surface.",
         "play": "Use all seven pieces to recreate a target shape.",

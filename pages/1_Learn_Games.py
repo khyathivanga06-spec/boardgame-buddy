@@ -75,7 +75,20 @@ with col2:
     st.write("⭐" * game["difficulty"])
 
 st.divider()
+if "description" in game:
 
+    st.info(
+        f"🎮 What is this game?\n\n{game['description']}"
+    )
+
+if "benefits" in game:
+
+    st.success(
+        "🌟 Benefits\n\n" +
+        "\n".join(
+            [f"✅ {benefit}" for benefit in game["benefits"]]
+        )
+    )
 st.subheader("🎥 Watch and Learn")
 
 
